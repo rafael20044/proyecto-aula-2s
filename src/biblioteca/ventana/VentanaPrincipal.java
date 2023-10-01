@@ -19,7 +19,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         pIngresar = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        pCupos = new javax.swing.JPanel();
+        pLibros = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -35,6 +35,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Principal ");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel2MouseEntered(evt);
             }
@@ -47,7 +50,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pPrincipal.setLayout(pPrincipalLayout);
         pPrincipalLayout.setHorizontalGroup(
             pPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
         );
         pPrincipalLayout.setVerticalGroup(
             pPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -56,6 +59,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pIngresar.setBackground(new java.awt.Color(0, 35, 245));
         pIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botIngresar(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 pIngresarMouseEntered(evt);
             }
@@ -80,29 +86,40 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
-        pCupos.setBackground(new java.awt.Color(0, 35, 245));
-        pCupos.addMouseListener(new java.awt.event.MouseAdapter() {
+        pLibros.setBackground(new java.awt.Color(0, 35, 245));
+        pLibros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pCuposMouseEntered(evt);
+                pLibrosMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                pCuposMouseExited(evt);
+                pLibrosMouseExited(evt);
             }
         });
 
         jLabel13.setBackground(new java.awt.Color(0, 35, 245));
         jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Cupos");
+        jLabel13.setText("Libros");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel13MouseExited(evt);
+            }
+        });
 
-        javax.swing.GroupLayout pCuposLayout = new javax.swing.GroupLayout(pCupos);
-        pCupos.setLayout(pCuposLayout);
-        pCuposLayout.setHorizontalGroup(
-            pCuposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pLibrosLayout = new javax.swing.GroupLayout(pLibros);
+        pLibros.setLayout(pLibrosLayout);
+        pLibrosLayout.setHorizontalGroup(
+            pLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        pCuposLayout.setVerticalGroup(
-            pCuposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pLibrosLayout.setVerticalGroup(
+            pLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
@@ -110,9 +127,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pCupos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pIngresar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pLibros, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +139,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(pIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(pCupos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -161,9 +178,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(170, 170, 170)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelCambiable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -174,7 +191,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(bgLayout.createSequentialGroup()
                 .addGap(120, 120, 120)
-                .addComponent(panelCambiable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelCambiable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -207,13 +224,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
        pIngresar.setBackground(new Color(0,35,245));
     }//GEN-LAST:event_pIngresarMouseExited
 
-    private void pCuposMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCuposMouseEntered
-        pCupos.setBackground(new Color(102,153,255));
-    }//GEN-LAST:event_pCuposMouseEntered
+    private void pLibrosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pLibrosMouseEntered
+        pLibros.setBackground(new Color(102,153,255));
+    }//GEN-LAST:event_pLibrosMouseEntered
 
-    private void pCuposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pCuposMouseExited
-        pCupos.setBackground(new Color(0,35,245));
-    }//GEN-LAST:event_pCuposMouseExited
+    private void pLibrosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pLibrosMouseExited
+        pLibros.setBackground(new Color(0,35,245));
+    }//GEN-LAST:event_pLibrosMouseExited
+
+    private void botIngresar(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botIngresar
+         Ingresar p = new Ingresar();
+        p.setSize(747, 362);
+        panelCambiable.removeAll();
+        panelCambiable.add(p);
+        panelCambiable.revalidate();
+        panelCambiable.repaint();   
+    }//GEN-LAST:event_botIngresar
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+         Libros p = new Libros();
+        p.setSize(747, 362);
+        panelCambiable.removeAll();
+        panelCambiable.add(p);
+        panelCambiable.revalidate();
+        panelCambiable.repaint();   
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jLabel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseEntered
+              pLibros.setBackground(new Color(102,153,255));
+    }//GEN-LAST:event_jLabel13MouseEntered
+
+    private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
+        pLibros.setBackground(new Color(0,35,245));
+    }//GEN-LAST:event_jLabel13MouseExited
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+         Principal p = new Principal();
+        p.setSize(747, 362);
+        panelCambiable.removeAll();
+        panelCambiable.add(p);
+        panelCambiable.revalidate();
+        panelCambiable.repaint();   
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     private void iniciaPanel(){
         Principal p = new Principal();
@@ -233,8 +285,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel pCupos;
     private javax.swing.JPanel pIngresar;
+    private javax.swing.JPanel pLibros;
     private javax.swing.JPanel pPrincipal;
     private javax.swing.JPanel panelCambiable;
     // End of variables declaration//GEN-END:variables

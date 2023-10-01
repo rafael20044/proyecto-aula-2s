@@ -38,9 +38,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="170" pref="170" max="-2" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
                       <Component id="panelCambiable" max="32767" attributes="0"/>
@@ -53,8 +53,8 @@
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <Component id="jPanel1" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
-                  <EmptySpace min="120" pref="120" max="-2" attributes="0"/>
-                  <Component id="panelCambiable" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                  <Component id="panelCambiable" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -70,9 +70,9 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pCupos" alignment="1" max="32767" attributes="0"/>
-                  <Component id="pIngresar" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pLibros" alignment="1" max="32767" attributes="0"/>
                   <Component id="pPrincipal" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pIngresar" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -83,7 +83,7 @@
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="pIngresar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="pCupos" min="-2" max="-2" attributes="0"/>
+                      <Component id="pLibros" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -100,7 +100,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" alignment="0" pref="175" max="32767" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" pref="168" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -119,6 +119,7 @@
                     <Property name="text" type="java.lang.String" value="Principal "/>
                   </Properties>
                   <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MouseClicked"/>
                     <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MouseEntered"/>
                     <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MouseExited"/>
                   </Events>
@@ -132,6 +133,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botIngresar"/>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pIngresarMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pIngresarMouseExited"/>
               </Events>
@@ -163,15 +165,15 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="pCupos">
+            <Container class="javax.swing.JPanel" name="pLibros">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="f5" green="23" red="0" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pCuposMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pCuposMouseExited"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pLibrosMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pLibrosMouseExited"/>
               </Events>
 
               <Layout>
@@ -196,8 +198,13 @@
                       <Font name="Arial" size="14" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Cupos"/>
+                    <Property name="text" type="java.lang.String" value="Libros"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel13MouseClicked"/>
+                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel13MouseEntered"/>
+                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel13MouseExited"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
