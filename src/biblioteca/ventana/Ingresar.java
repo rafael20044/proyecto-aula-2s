@@ -1,13 +1,21 @@
 package biblioteca.ventana;
 
 import biblioteca.modelos.Persona;
+import java.awt.AWTEventMulticaster;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class Ingresar extends javax.swing.JPanel {
 
-    int cuposOcupados = 0;
+    int cuposOcupados = 0,mesaPc=0,mesaGrupal=0,mesaIndividual=0;
     ArrayList<Persona> personas = new ArrayList<>() ;
     DefaultListModel model = new DefaultListModel();
     
@@ -121,6 +129,11 @@ public class Ingresar extends javax.swing.JPanel {
         txtCuposOcupados.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         txtCuposOcupados.setText("Cupos ocupados:           / 20");
         txtCuposOcupados.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtCuposOcupados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCuposOcupadosMouseClicked(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Eliminar cedula:");
@@ -297,19 +310,39 @@ public class Ingresar extends javax.swing.JPanel {
             personas.add(new Persona(nombreS, apellidoS, carreraS, semestreS, correoS, telefonoS, cedulaS));
             cuposOcupados++;
             actualizarCuposOcupados();
-            llenarLista();
+             elegirPuesto();
+            llenarLista();         
         }
 
     }//GEN-LAST:event_btRegistrarActionPerformed
+
+    private void txtCuposOcupadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCuposOcupadosMouseClicked
+        JDialog jd = new JDialog();
+        JPanel j = new JPanel();
+        JLabel labPc = new JLabel();
+        JLabel labMi = new JLabel();
+        JLabel labMg = new JLabel();
+        labPc.setText("Mesa con pc: "+mesaPc+"/5");
+        labMi.setText("Mesa individual: "+mesaIndividual+"/5");
+        labMg.setText("Mesa grupal: "+mesaGrupal+"/10");
+        j.setBackground(Color.WHITE);
+        j.add(labPc);
+        j.add(labMi);
+        j.add(labMg);
+        jd.setVisible(true);
+        jd.setSize(200, 150);
+        jd.add(j);       
+        jd.setTitle("Puestos disponibles");
+    }//GEN-LAST:event_txtCuposOcupadosMouseClicked
    
-        private void llenarLista(){
+     private void llenarLista(){
         model.removeAllElements();
         for (int i = 0; i < personas.size(); i++) {
             model.addElement(personas.get(i).toString());
         }
     }  
         
-        private boolean tieneNumeros(String str){
+     private boolean tieneNumeros(String str){
             char caracteres[] = str.toCharArray();
             for (int i = 0; i < caracteres.length; i++) {
             char c= caracteres[i];
@@ -321,7 +354,7 @@ public class Ingresar extends javax.swing.JPanel {
             return false;
     }
     
-         private boolean tieneLetras(String str){
+     private boolean tieneLetras(String str){
             char caracteres[] = str.toCharArray();
             for (int i = 0; i < caracteres.length; i++) {
             char c= caracteres[i];
@@ -331,6 +364,70 @@ public class Ingresar extends javax.swing.JPanel {
         }
         return false;
     }
+     
+     private void elegirPuesto(){
+         JDialog j = new JDialog();
+         JPanel pane = new JPanel();
+         JButton botMesaPc = new JButton();
+         JButton botMesaGrupal = new JButton();
+         JButton botMesaIndi = new JButton();
+         
+         botMesaPc.setText("Mesa con pc");
+         botMesaPc.setSize(150,50);
+         if (mesaPc<5) {
+         ActionListener buPc = new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+              mesaPc++;
+              j.dispose();
+             }
+         };               
+         botMesaPc.addActionListener(buPc);   
+         } else {
+             JOptionPane.showMessageDialog(this, "Los cupos estan llenos");
+         }
+         pane.add(botMesaPc);    
+         
+         botMesaGrupal.setText("Mesa grupal");
+         botMesaPc.setSize(150,50);         
+         if (mesaGrupal<10) {
+             ActionListener buGrupa = new ActionListener() {
+                 @Override
+                 public void actionPerformed(ActionEvent e) {
+                  mesaGrupal++;
+                  j.dispose();
+                 }
+             };
+             botMesaGrupal.addActionListener(buGrupa);
+         } else {
+             JOptionPane.showMessageDialog(this, "Los cupos estan llenos");
+         }
+         pane.add(botMesaGrupal);
+         
+         botMesaIndi.setText("Mesa individual");
+         botMesaPc.setSize(150,50);
+         if (mesaIndividual<5) {
+             ActionListener buIndi = new ActionListener() {
+                 @Override
+                 public void actionPerformed(ActionEvent e) {
+                     mesaIndividual++;
+                     j.dispose();
+                 }
+             };
+             botMesaIndi.addActionListener(buIndi);
+         } else {
+             JOptionPane.showMessageDialog(this, "Los cupos estan llenos");
+         }
+         pane.add(botMesaIndi);
+         
+         pane.setBackground(Color.WHITE);
+         j.add(pane);
+         j.setVisible(true);
+         j.setSize(200, 200);  
+         j.setTitle("Elegir el puesto");
+         j.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+     }
+     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

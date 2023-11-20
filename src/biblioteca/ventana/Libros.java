@@ -1,10 +1,18 @@
 package biblioteca.ventana;
 
+import biblioteca.modelos.Libro;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 
 public class Libros extends javax.swing.JPanel {
-
+    ArrayList<Libro> libro = new ArrayList<>();
+    DefaultListModel modelo = new DefaultListModel();
+    
     public Libros() {
         initComponents();
+        lista.setModel(modelo);
     }
 
     @SuppressWarnings("unchecked")
@@ -13,14 +21,21 @@ public class Libros extends javax.swing.JPanel {
 
         panelCam = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        calculoButton = new javax.swing.JButton();
-        cienciasButton = new javax.swing.JButton();
-        revistaButton = new javax.swing.JButton();
-        politicaButton = new javax.swing.JButton();
-        historiasButton = new javax.swing.JButton();
-        ingenieriaButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        txtAutor = new javax.swing.JTextField();
+        txtEditorial = new javax.swing.JTextField();
+        txtCodigo = new javax.swing.JTextField();
+        txtAño = new javax.swing.JTextField();
+        buttAgregar = new javax.swing.JButton();
+        txtCode = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lista = new javax.swing.JList<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(0, 51, 255));
@@ -31,64 +46,31 @@ public class Libros extends javax.swing.JPanel {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Lecturas que puedes encontrar en nuestra biblioteca");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblioteca/imagenes/periodico.png"))); // NOI18N
+        jLabel3.setText("Nombre:");
 
-        calculoButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        calculoButton.setText("CALCULO");
-        calculoButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
-        calculoButton.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setText("Autor");
+
+        jLabel6.setText("editorial");
+
+        jLabel7.setText("codigo");
+
+        jLabel8.setText("Año");
+
+        buttAgregar.setText("Agregar libro");
+        buttAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calculoButtonActionPerformed(evt);
+                buttAgregarActionPerformed(evt);
             }
         });
 
-        cienciasButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        cienciasButton.setText("CIENCIAS");
-        cienciasButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
-        cienciasButton.addActionListener(new java.awt.event.ActionListener() {
+        txtCode.setText("Buscar libro");
+        txtCode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cienciasButtonActionPerformed(evt);
+                txtCodeActionPerformed(evt);
             }
         });
 
-        revistaButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        revistaButton.setText("REVISTAS");
-        revistaButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
-        revistaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                revistaButtonActionPerformed(evt);
-            }
-        });
-
-        politicaButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        politicaButton.setText("POLITICA");
-        politicaButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
-        politicaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                politicaButtonActionPerformed(evt);
-            }
-        });
-
-        historiasButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        historiasButton.setText("HISTORIAS");
-        historiasButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
-        historiasButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                historiasButtonActionPerformed(evt);
-            }
-        });
-
-        ingenieriaButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        ingenieriaButton.setText("INGENIERIA");
-        ingenieriaButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 0), new java.awt.Color(0, 0, 0), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
-        ingenieriaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingenieriaButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/biblioteca/imagenes/libros-de-texto.png"))); // NOI18N
+        jScrollPane1.setViewportView(lista);
 
         javax.swing.GroupLayout panelCamLayout = new javax.swing.GroupLayout(panelCam);
         panelCam.setLayout(panelCamLayout);
@@ -97,48 +79,76 @@ public class Libros extends javax.swing.JPanel {
             .addGroup(panelCamLayout.createSequentialGroup()
                 .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelCamLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(buttAgregar)
+                                .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCamLayout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtCodigo))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelCamLayout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(panelCamLayout.createSequentialGroup()
+                                .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNombre)
+                                    .addComponent(txtAutor, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)))
+                            .addGroup(panelCamLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(53, 53, 53)
+                        .addComponent(txtCode)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelCamLayout.createSequentialGroup()
                         .addGap(154, 154, 154)
-                        .addComponent(jLabel2))
-                    .addGroup(panelCamLayout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel5)
-                        .addGap(103, 103, 103)
-                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(calculoButton, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(politicaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cienciasButton, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(historiasButton))
-                        .addGap(34, 34, 34)
-                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ingenieriaButton)
-                            .addComponent(revistaButton)))
-                    .addGroup(panelCamLayout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel1)))
-                .addContainerGap(161, Short.MAX_VALUE))
+                        .addComponent(jLabel2)))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         panelCamLayout.setVerticalGroup(
             panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCamLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(18, 18, 18)
                 .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelCamLayout.createSequentialGroup()
                         .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(calculoButton)
-                            .addComponent(cienciasButton)
-                            .addComponent(revistaButton))
-                        .addGap(42, 42, 42)
+                            .addComponent(jLabel3)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(txtAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(33, 33, 33)
                         .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(politicaButton)
-                            .addComponent(historiasButton)
-                            .addComponent(ingenieriaButton))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel7)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addGroup(panelCamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttAgregar)
+                    .addComponent(txtCode)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -153,71 +163,63 @@ public class Libros extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cienciasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cienciasButtonActionPerformed
-        Ciencia ciencias = new Ciencia();
-        ciencias.setSize(776, 377);
-        panelCam.removeAll();
-        panelCam.add(ciencias);        
-        panelCam.revalidate();
-        panelCam.repaint();
-    }//GEN-LAST:event_cienciasButtonActionPerformed
+    private void buttAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttAgregarActionPerformed
+        String nombre = txtNombre.getText();
+        String autor = txtAutor.getText();
+        String editorial = txtEditorial.getText();
+        String codigo= txtCodigo.getText();
+        String año = txtAño.getText();
+        if (nombre.isEmpty() || autor.isEmpty() || editorial.isEmpty() || codigo.isEmpty() || año.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Los campos estan vacios");
+        } else {
+            libro.add(new Libro(nombre, autor, editorial, codigo, año));
+            llenarLista();
+        }
+    }//GEN-LAST:event_buttAgregarActionPerformed
 
-    private void calculoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculoButtonActionPerformed
-        Calculo c = new Calculo();
-        c.setSize(776, 377);
-        panelCam.removeAll();
-        panelCam.add(c);
-        panelCam.repaint();
-        panelCam.revalidate();
-    }//GEN-LAST:event_calculoButtonActionPerformed
+    private void txtCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodeActionPerformed
+        String codigo = txtCode.getText();
+        if (buscar(codigo)) {
+            JOptionPane.showMessageDialog(this, "Este libro se encuentra registrado");
+        } else {
+            JOptionPane.showMessageDialog(this, "Este libro no existe");
+        }
 
-    private void revistaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revistaButtonActionPerformed
-        Revista r = new Revista();
-        r.setSize(776, 377);
-        panelCam.removeAll();
-        panelCam.add(r);
-        panelCam.repaint();
-        panelCam.revalidate();     
-    }//GEN-LAST:event_revistaButtonActionPerformed
-
-    private void politicaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_politicaButtonActionPerformed
-        Politica p = new Politica();
-        p.setSize(776, 377);
-        panelCam.removeAll();
-        panelCam.add(p);
-        panelCam.repaint();
-        panelCam.revalidate();         
-    }//GEN-LAST:event_politicaButtonActionPerformed
-
-    private void historiasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historiasButtonActionPerformed
-        Historia h = new Historia();
-        h.setSize(776, 377);
-        panelCam.removeAll();
-        panelCam.add(h);
-        panelCam.repaint();
-        panelCam.revalidate();  
-    }//GEN-LAST:event_historiasButtonActionPerformed
-
-    private void ingenieriaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingenieriaButtonActionPerformed
-        Ingenieria i = new Ingenieria();
-        i.setSize(776, 377);
-        panelCam.removeAll();
-        panelCam.add(i);
-        panelCam.repaint();
-        panelCam.revalidate();  
-    }//GEN-LAST:event_ingenieriaButtonActionPerformed
-
+    }//GEN-LAST:event_txtCodeActionPerformed
+ 
+    private void llenarLista(){
+        modelo.removeAllElements();
+        for (int i = 0; i < libro.size(); i++) {
+            modelo.addElement(libro.get(i).toString());
+        }
+    }
+    
+    private boolean buscar(String codi){
+        for (int i = 0; i < libro.size(); i++) {
+            if (libro.get(i).getCodigo().equals(codi)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton calculoButton;
-    private javax.swing.JButton cienciasButton;
-    private javax.swing.JButton historiasButton;
-    private javax.swing.JButton ingenieriaButton;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton buttAgregar;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JList<String> lista;
     private javax.swing.JPanel panelCam;
-    private javax.swing.JButton politicaButton;
-    private javax.swing.JButton revistaButton;
+    private javax.swing.JTextField txtAutor;
+    private javax.swing.JTextField txtAño;
+    private javax.swing.JButton txtCode;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEditorial;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
